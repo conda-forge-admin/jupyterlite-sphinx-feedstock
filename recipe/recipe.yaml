@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.22.1"
+  version: "0.23.0"
   python_check_max: "3.14"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-sphinx/jupyterlite_sphinx-${{ version }}.tar.gz
-  sha256: e13682884deaecdb88dc81917df8a7275291f17575c3d1707b791e4a876a8556
+  sha256: ac7d4af5bda5b72ad728b74e343e4210e3517c8ba45c639e67185e5ab27079af
 
 build:
   number: 0
