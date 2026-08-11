@@ -16,31 +16,46 @@ source:
 build:
   number: 0
   noarch: python
-  script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
-requirements:
-  host:
-    - hatchling
-    - pip
-    - python ${{ python_min }}.*
-  run:
-    - docutils
-    - jupyter_server
-    - jupyterlab_server
-    - jupyterlite-core >=0.2,<0.8
-    - jupytext
-    - nbformat
-    - python >=${{ python_min }}
-    - sphinx >=4
-
-tests:
-  - python:
-      imports: jupyterlite_sphinx
-      pip_check: true
-      python_version:
-        - ${{ python_min }}.*
-        - ${{ python_check_max }}.*
+outputs:
+  - package:
+      name: jupyterlite-sphinx
+    build:
+      noarch: python
+      script:
+        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check      
+    requirements:
+      host:
+        - hatchling
+        - pip
+        - python ${{ python_min }}.*
+      run:
+        - docutils
+        - jupyter_server
+        - jupyterlab_server
+        - jupyterlite-core >=0.2,<0.9
+        - nbformat
+        - python >=${{ python_min }}
+        - sphinx >=4
+    tests:
+      - python:
+          imports: jupyterlite_sphinx
+          pip_check: true
+          python_version:
+            - ${{ python_min }}.*
+            - ${{ python_check_max }}.*
+  - package:
+      name: jupyterlite-sphinx-markdown
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+      run:
+        - python >=${{ python_min }}
+        - jupytext
+      run_constraints:
+        - jupyterlite-sphinx =${{ version }}
 
 about:
   summary: Sphinx extension for deploying JupyterLite
