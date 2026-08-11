@@ -31,6 +31,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-jupyterlite--sphinx-green.svg)](https://anaconda.org/conda-forge/jupyterlite-sphinx) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyterlite-sphinx.svg)](https://anaconda.org/conda-forge/jupyterlite-sphinx) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyterlite-sphinx.svg)](https://anaconda.org/conda-forge/jupyterlite-sphinx) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyterlite-sphinx.svg)](https://anaconda.org/conda-forge/jupyterlite-sphinx) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-jupyterlite--sphinx--markdown-green.svg)](https://anaconda.org/conda-forge/jupyterlite-sphinx-markdown) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyterlite-sphinx-markdown.svg)](https://anaconda.org/conda-forge/jupyterlite-sphinx-markdown) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyterlite-sphinx-markdown.svg)](https://anaconda.org/conda-forge/jupyterlite-sphinx-markdown) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyterlite-sphinx-markdown.svg)](https://anaconda.org/conda-forge/jupyterlite-sphinx-markdown) |
 
 Installing jupyterlite-sphinx
 =============================
@@ -49,7 +50,7 @@ How to use
 <summary>With conda</summary>
 
 ```
-conda install jupyterlite-sphinx
+conda install jupyterlite-sphinx jupyterlite-sphinx-markdown
 ```
 
 </details>
@@ -58,7 +59,7 @@ conda install jupyterlite-sphinx
 <summary>With mamba</summary>
 
 ```
-mamba install jupyterlite-sphinx
+mamba install jupyterlite-sphinx jupyterlite-sphinx-markdown
 ```
 
 </details>
@@ -68,9 +69,9 @@ mamba install jupyterlite-sphinx
 
 ```
 # for adding to your local project
-pixi add jupyterlite-sphinx
+pixi add jupyterlite-sphinx jupyterlite-sphinx-markdown
 # for installing globally
-pixi global install jupyterlite-sphinx
+pixi global install jupyterlite-sphinx jupyterlite-sphinx-markdown
 ```
 
 </details>
