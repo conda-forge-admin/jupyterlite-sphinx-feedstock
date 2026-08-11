@@ -5,6 +5,10 @@ context:
   version: "0.23.0"
   python_check_max: "3.14"
 
+recipe:
+  name: jupyterlite-sphinx-packages
+  version: ${{ version }}
+
 source:
   url: https://pypi.org/packages/source/j/jupyterlite-sphinx/jupyterlite_sphinx-${{ version }}.tar.gz
   sha256: ac7d4af5bda5b72ad728b74e343e4210e3517c8ba45c639e67185e5ab27079af
@@ -16,7 +20,6 @@ build:
 outputs:
   - package:
       name: jupyterlite-sphinx
-      version: ${{ version }}
     build:
       noarch: python
       script:
@@ -43,7 +46,6 @@ outputs:
             - ${{ python_check_max }}.*
   - package:
       name: jupyterlite-sphinx-markdown
-      version: ${{ version }}
     build:
       noarch: python
     requirements:
@@ -54,6 +56,13 @@ outputs:
         - jupytext
       run_constraints:
         - jupyterlite-sphinx =${{ version }}
+    tests:
+      - python:
+          imports: jupyterlite_sphinx
+          pip_check: true
+          python_version:
+            - ${{ python_min }}.*
+            - ${{ python_check_max }}.*
 
 about:
   summary: Sphinx extension for deploying JupyterLite
