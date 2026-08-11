@@ -53,6 +53,7 @@ outputs:
         - python ${{ python_min }}.*
       run:
         - python >=${{ python_min }}
+        - jupyterlite-sphinx
         - jupytext
       run_constraints:
         - jupyterlite-sphinx =${{ version }}
